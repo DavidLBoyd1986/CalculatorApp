@@ -12,13 +12,13 @@ class Calculator(tk.Frame):
     def __init__(self, master):
         super().__init__(master, relief=tk.RAISED)
         # self.pack() adds this instance to the window (master)
-        Grid.rowconfigure(self, 0, weight=1)
-        Grid.columnconfigure(self, 0, weight=1)
+        Grid.rowconfigure(master, 0, weight=1)
+        Grid.columnconfigure(master, 0, weight=1)
         self.grid(column=0, row=0, sticky="N"+'S'+'E'+'W')
         grid = Frame(self)
         grid.grid(sticky="N"+'S'+'E'+'W', column=0, row=5, columnspan=2)
-        Grid.columnconfigure(self, 0, weight=1)
-        Grid.rowconfigure(self, 5, weight=1)
+        Grid.columnconfigure(master, 0, weight=1)
+        Grid.rowconfigure(master, 5, weight=1)
         #self.pack()
         # Start an Equation instance and set it to an empty string
         self.equation = Equation()
@@ -255,8 +255,8 @@ class Calculator(tk.Frame):
         self.clear_button.grid(column=3, row=5, sticky="N"+'S'+'E'+'W')
 
         for x in range(4):
-            Grid.columnconfigure(self, x, weight=1)
+            Grid.columnconfigure(master, x, weight=1)
         for y in range(6):
-            Grid.rowconfigure(self, y, weight=1)
+            Grid.rowconfigure(master, y, weight=1)
 
 
