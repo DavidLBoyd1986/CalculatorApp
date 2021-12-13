@@ -67,7 +67,7 @@ class Equation:
             self.equation += "("
         elif self.equation.endswith(('+', '-', '*', '/', '**', '(')):
             self.equation += (" " + str(op_input))
-        elif self.equation.endswith(("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".")):
+        elif self.equation.endswith(("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", ")")):
             print("Invalid Input")
 
     def closed_paren_input(self, cp_input):
@@ -80,8 +80,10 @@ class Equation:
             print("Invalid Input - Can't add more closed parenthesis than there are open parenthesis")
         elif self.equation.endswith(('+', '-', '*', '/', '**')):
             print("Invalid Input")
-        elif self.equation.endswith(("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ".", ')')):
+        elif self.equation.endswith(("1", "2", "3", "4", "5", "6", "7", "8", "9", "0", ")")):
             self.equation += (" " + str(cp_input))
+        elif self.equation.endswith('.'):
+            self.equation += ("0 " + str(cp_input))
 
     def equals_input(self, equals_input):
         """Handles the equals input"""
