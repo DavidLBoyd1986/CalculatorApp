@@ -6,6 +6,18 @@ from Equation import Equation
 #     def test_something(self):
 #         self.assertEqual(True, False)
 
+class TestNumericInput(unittest.TestCase):
+
+    def setUp(self):
+        self.equation = Equation()
+
+    def test_numeric_input_not_numeric(self):
+        with self.assertRaises(AssertionError):
+            self.equation.numeric_input("a")
+
+    def test_numeric_input_valid_input_on_empty_string(self):
+        self.equation.numeric_input("1")
+        self.assertEqual(self.equation.equation_output(), "1")
 
 class TestValidateEquation(unittest.TestCase):
     """Lists of equations used to test the Equation Class and validate_equation method"""
